@@ -8,17 +8,17 @@ int main() {
     
     int n;
     cin >> n;
-    vector<string> bit_string(1<<n);
-    int curr_size = 1;
+    vector<string> bitString(1<<n);
+    int currSize = 1;
     for (int i = 0; i < n; i++) {
-        curr_size *= 2;
-        for (int j = 0; j < curr_size / 2; j++) {
-            bit_string[curr_size - 1 - j] = bit_string[j] + '1';
-            bit_string[j] += '0';
+        currSize *= 2;
+        for (int j = 0; j < currSize / 2; j++) {
+            bitString[currSize - 1 - j] = bitString[j] + '1';
+            bitString[j] += '0';
         }
     }
-    for (int i = 0; i < curr_size; i++) {
-        cout << bit_string[i] << '\n';
+    for (int i = 0; i < currSize; i++) {
+        cout << bitString[i] << '\n';
     }
     
     return 0;
