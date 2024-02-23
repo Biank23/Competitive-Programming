@@ -7,14 +7,14 @@ using ll = long long;
 int getDigit(ll k) {
     int digits = 1;
     ll cant = 9;
-    ll power_of_10 = 1;
+    ll powerOf10 = 1;
     while (digits * cant < k) {
         k -= digits * cant;
         cant *= 10;
-        power_of_10 *= 10;
+        powerOf10 *= 10;
         digits++;
     }
-    ll number = power_of_10 + (k - 1) / digits;
+    ll number = powerOf10 + (k - 1) / digits;
     int digit = to_string(number)[(k - 1) % digits] - '0';
     return digit;
 }
