@@ -10,13 +10,12 @@ int main() {
     cin >> n >> target;
     map<int, int> idx;
     bool found = false;
-    for (int i = 1; i <= n; i++) {
+    for (int i = 1; i <= n && !found; i++) {
         int a;
         cin >> a;
         if (idx.count(target - a)) {
             cout << idx[target - a] << ' ' << i << '\n';
             found = true;
-            break;
         }
         idx[a] = i;
     }
