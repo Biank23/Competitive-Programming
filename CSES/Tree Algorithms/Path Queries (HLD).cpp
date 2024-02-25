@@ -30,7 +30,7 @@ int heavy[MAX_N], head[MAX_N], pos[MAX_N];
 int sz[MAX_N], timer = 0;
 vector<int> adj[MAX_N];
  
-void dfs1(int u){
+void dfs1(int u) {
     sz[u] = 1;
     int maxi = 0;
     for (int v : adj[u]) if (v != par[u]) {
@@ -65,7 +65,7 @@ void init() {
     dfs2(0, 0);
 }
  
-ll pathQuery(int b){
+ll pathQuery(int b) {
     ll res = 0;
     while (head[b] != 0) {
         res += query(pos[head[b]], pos[b]);
@@ -99,7 +99,7 @@ int main(){
         if (t == 1) {
             int b;
             cin >> b;
-            update(pos[a - 1],b);
+            update(pos[a - 1], b);
         } else {
             cout << pathQuery(a - 1) << '\n';
         }
