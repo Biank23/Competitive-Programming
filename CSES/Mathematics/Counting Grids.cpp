@@ -30,16 +30,16 @@ inline ll ceil(ll x, int y) {
  
 int main() {
     ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
+    cin.tie(0); cout.tie(0);
     
-	ll n;
+    ll n;
     cin >> n;
-	ll s = (ll) n * n;
-	int res = binpow(2, s); //0°
+    ll s = (ll) n * n;
+    int res = binpow(2, s); //0°
     add(res, binpow(2, ceil(s, 4))); //90°
-	add(res, binpow(2, ceil(s, 2))); //180°
+    add(res, binpow(2, ceil(s, 2))); //180°
     add(res, binpow(2, ceil(s, 4))); //270°
-	cout<< mul(res, binpow(4, MOD - 2)) <<'\n';
+    cout<< mul(res, binpow(4, MOD - 2)) <<'\n';
     
     return 0;
 }
