@@ -7,8 +7,8 @@ const int MAX_N = 1300;
 int mex(set<int> &s) {
     for (int i = 0; i < MAX_N; i++) {
         if (!s.count(i)) return i;
-	}
-	assert(false);
+    }
+    assert(false);
 }
  
 int dp[MAX_N];
