@@ -24,13 +24,14 @@ void init() {
 }
  
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
 	
-	init();
-	int t; cin >> t;
-	while (t--) {
-		int n; cin >> n;
+    init();
+    int t; cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
         if (n >= MAX_N || dp[n] != 0) {
             cout << "first\n";
         } else {
