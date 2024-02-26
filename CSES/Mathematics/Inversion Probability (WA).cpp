@@ -11,16 +11,16 @@ using namespace std;
  
 int main() {
     ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
+    cin.tie(0); cout.tie(0);
     
-	int n;
+    int n;
     cin >> n;
-	vector<int> r(n);
-	for (int i = 0; i < n; i++) {
+    vector<int> r(n);
+    for (int i = 0; i < n; i++) {
         cin >> r[i];
     }
     
-	double res = 0;
+    double res = 0;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < i; j++) {
             int tot = r[i] * r[j], fav;
@@ -32,7 +32,7 @@ int main() {
             res += (double) fav / tot;
         }
     }
-	cout << fixed << setprecision(6) << res << '\n';
+    cout << fixed << setprecision(6) << res << '\n';
     
     return 0;
 }
