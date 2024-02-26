@@ -20,7 +20,7 @@ void add(int &x, int v) {
 const int SZ = 2;
  
 Mat mul(const Mat &a, const Mat &b) {
-	Mat c(SZ, vi(SZ, 0));
+    Mat c(SZ, vi(SZ, 0));
     for (int i = 0; i < SZ; i++) {
         for (int j = 0; j < SZ; j++) {
             for (int k = 0; k < SZ; k++) {
@@ -28,7 +28,7 @@ Mat mul(const Mat &a, const Mat &b) {
             }
         }
     }
-	return c;
+    return c;
 }
  
 Mat binpow(Mat a, ll k) {
