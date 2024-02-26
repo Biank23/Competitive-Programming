@@ -42,26 +42,25 @@ int main() {
     initFactorials();
     
     int n;
-	string s;
-	cin >> n >> s;
+    string s;
+    cin >> n >> s;
 	
     int m = ssize(s), c = 0;
-	bool possible = true;
-	for (int i = 0; i < m; i++) {
-		if (s[i] == '(') c++;
-		else c--;
-		if (c < 0) possible = false;
-	}
+    bool possible = true;
+    for (int i = 0; i < m; i++) {
+        if (s[i] == '(') c++;
+        else c--;
+        if (c < 0) possible = false;
+    }
 	
     n -= m;
-	if ((n - c) % 2 == 1 || !possible) {
-		cout << "0\n";
-		return 0;
-	}
+    if ((n - c) % 2 == 1 || !possible) {
+        cout << "0\n";
+        return 0;
+    }
     
     int k = (n - c) / 2;
     cout << mul(C(n, k), mul(c + 1, binpow(k + c + 1, MOD - 2))) << '\n';
-    
     
     return 0;
 }
