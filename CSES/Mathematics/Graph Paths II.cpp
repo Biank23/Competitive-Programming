@@ -10,7 +10,7 @@ const ll INF = 2e18;
 int n;
  
 Mat mul(const Mat &a, const Mat &b) {
-	Mat c(n, vll(n, INF));
+    Mat c(n, vll(n, INF));
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             for (int k = 0; k < n; k++) {
@@ -18,7 +18,7 @@ Mat mul(const Mat &a, const Mat &b) {
             }
         }
     }
-	return c;
+    return c;
 }
  
 Mat binpow(Mat a, ll k) {
