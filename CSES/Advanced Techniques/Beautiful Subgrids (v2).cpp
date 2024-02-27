@@ -28,7 +28,9 @@ int main() {
     int n = scanint();
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            if (getchar_unlocked() == '1') mat[i][j >> 6] |= 1ULL << (j&63);
+            if (getchar_unlocked() == '1') {
+                mat[i][j >> 6] |= 1ULL << (j&63);
+            }
         }
         getchar_unlocked();
     }
