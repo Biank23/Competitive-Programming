@@ -13,22 +13,22 @@ bitset<MAX_N> done;
 int sz[MAX_N];
 
 int getSize(int u, int p = -1) {
-	sz[u] = 1;
-	for (int v : adj[u]) {
-		if (v != p && !done[v]) {
-			sz[u] += getSize(v, u);
-		}
-	}
-	return sz[u];
+    sz[u] = 1;
+    for (int v : adj[u]) {
+        if (v != p && !done[v]) {
+            sz[u] += getSize(v, u);
+        }
+    }
+    return sz[u];
 }
  
 int findCentroid(int u, int size, int p = -1) {
-	for (int v : adj[u]) {
-		if (v != p && !done[v] && sz[v] > size / 2) {
+    for (int v : adj[u]) {
+        if (v != p && !done[v] && sz[v] > size / 2) {
             return findCentroid(v, size, u);
-		}
-	}
-	return u;
+        }
+    }
+    return u;
 }
  
 int height[MAX_N], par[MAX_N];
@@ -46,15 +46,15 @@ void dfs(int u, int h, int p = -1, int d = 0) {
 void build(int u, int h = 0, int p = -1) {
     int size = getSize(u);
     u = findCentroid(u, size);
-	done[u] = true;
+    done[u] = true;
     height[u] = h;
     par[u] = p;
     dfs(u, h);
-	for (int v : adj[u]) {
-		if (!done[v]) {
-			build(v, h + 1, u);
-		}
-	}
+    for (int v : adj[u]) {
+        if (!done[v]) {
+            build(v, h + 1, u);
+        }
+    }
 }
 
 void update(int u) {
@@ -83,16 +83,16 @@ int main() {
     ios::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
     
-	int n, d;
-	cin >> n >> d;
+    int n, d;
+    cin >> n >> d;
     
-	for (int i = 1; i < n; i++) {
-		int u, v;
-		cin >> u >> v;
+    for (int i = 1; i < n; i++) {
+        int u, v;
+        cin >> u >> v;
         --u, --v;
-		adj[u].push_back(v);
-		adj[v].push_back(u);
-	}
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
 
     queue<int> q;
     q.push(0);
@@ -127,5 +127,5 @@ int main() {
         cout << u + 1 << ' ';
     }
 
-	return 0;
+    return 0;
 }
