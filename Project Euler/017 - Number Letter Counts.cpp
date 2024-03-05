@@ -35,23 +35,23 @@ int tens[] = {0,
     /*sixty*/   5,
     /*seventy*/ 7,
     /*eighty*/  6,
-    /*ninety*/  7
+    /*ninety*/  6
     };
 
 int letters(int x) {
     if (x < 20) {
         return units[x];
-    }
-    if (x < 100) {
+    } else if (x < 100) {
         return tens[x / 10] + units[x % 10];
-    }
-    if (x < 1000) {
+    } else if (x < 1000) {
         int L = units[x / 100] + /*hundred*/ 7;
         if (x % 100 != 0) L += /*and*/ 3 + letters(x % 100);
         return L;
+    } else if (x == 1000) {
+        return /*one thousand*/ 11;
+    } else {
+        assert(false);
     }
-    if (x == 1000) return /*one thousand*/ 11;
-    assert(false);
 }
 
 int main() {
@@ -63,6 +63,7 @@ int main() {
     for (int i = 1; i <= N; i++) {
         res += letters(i);
     }
+    cout << res << '\n';
 
     return 0;
 }
