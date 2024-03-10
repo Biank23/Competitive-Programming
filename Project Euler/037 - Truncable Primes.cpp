@@ -26,12 +26,11 @@ bool isPrime(string num) {
     return p[stoi(num)];
 }
 
-bool isTruncablePrime(string num) {
+bool isLeftTruncablePrime(string num) {
     int digits = sz(num);
     if (digits < 2) return false;
     for (int i = 0; i < digits; i++) {
         if (!isPrime(num.substr(i))) return false;
-        if (!isPrime(num.substr(0, i + 1))) return false;
     }
     return true;
 }
@@ -47,6 +46,7 @@ int main() {
     ll res = 0;
     int cant = 0;
 
+    //generate right truncable primes
     queue<string> q;
     for (char digit : "2357"s) {
         q.push(""s+digit);
@@ -55,14 +55,13 @@ int main() {
     while (!q.empty() && cant < 11) {
         string num = q.front();
         q.pop();
-        if (isTruncablePrime(num)) {
+        if (!isPrime(num)) continue;
+        if (isLeftTruncablePrime(num)) {
             res += stoi(num);
             cant++;
         }
-        if (sz(num) == 1 || (num.back() != '2' && num.back() != '5')) {
-            for (char digit : "123579"s) {
-                q.push(num + digit);
-            }
+        for (char digit : "1379"s) {
+             q.push(num + digit);
         }
     }
 
