@@ -6,7 +6,7 @@ using ll = long long;
 const int MAX_N = 1e7;
 
 bool p[MAX_N];
-vector<int> primes;
+vector<ll> primes;
 
 void sieve() {
     for (int i = 0; i < MAX_N; i++) {
