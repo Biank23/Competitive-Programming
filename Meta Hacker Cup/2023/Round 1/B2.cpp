@@ -8,11 +8,11 @@ using vi = vector<int>;
 using ll = long long;
 
 vi getDivisors(int x) {
-	vi d;
-	for (int i = 2; i <= 41; i++) {
+    vi d;
+    for (int i = 2; i <= 41; i++) {
         if (x % i == 0) d.push_back(i);
     }
-	return d;
+    return d;
 }
 
 const int INF = 1e9;
@@ -38,14 +38,14 @@ pair<int, vi> dfs(vi &d, int P, int i = 0, int sum = 0, vi curr = {}) {
 }
 
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
-	
-	int TT;
-	cin >> TT;
-	for (int tt = 1 ; tt <= TT; tt++) {
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    
+    int TT;
+    cin >> TT;
+    for (int tt = 1 ; tt <= TT; tt++) {
         cout << "Case #" << tt << ": ";
-		int P;
+        int P;
         cin >> P;
         
         vi d = getDivisors(P);

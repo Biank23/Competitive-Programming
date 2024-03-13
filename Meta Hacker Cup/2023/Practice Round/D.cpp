@@ -152,13 +152,13 @@ void clear(int n, int m) {
 }
 
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
-	
-	int TT;
-	cin >> TT;
-	for (int tt = 1 ; tt <= TT; tt++) {
-		int n, m;
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    
+    int TT;
+    cin >> TT;
+    for (int tt = 1 ; tt <= TT; tt++) {
+        int n, m;
         cin >> n >> m;
         clear(n, m);
         
@@ -186,5 +186,5 @@ int main() {
             ans += r;
         }
         cout << "Case #" << tt << ": " << ans << '\n';
-	}
+    }
 }

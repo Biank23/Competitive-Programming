@@ -8,26 +8,26 @@ using vi = vector<int>;
 using ll = long long;
 
 vi getFactors(int x) {
-	vi f;
-	for (int i = 2; i * i <= x; i++) {
-		while (x % i == 0) {
-			f.push_back(i);
+    vi f;
+    for (int i = 2; i * i <= x; i++) {
+        while (x % i == 0) {
+            f.push_back(i);
             x /= i;
-		}
-	}
-	if (x != 1) f.push_back(x);
-	return f;
+        }
+    }
+    if (x != 1) f.push_back(x);
+    return f;
 }
 
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
-	
-	int TT;
-	cin >> TT;
-	for (int tt = 1 ; tt <= TT; tt++) {
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    
+    int TT;
+    cin >> TT;
+    for (int tt = 1 ; tt <= TT; tt++) {
         cout << "Case #" << tt << ": ";
-		int P;
+        int P;
         cin >> P;
         
         vi f = getFactors(P);

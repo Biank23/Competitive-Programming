@@ -9,30 +9,30 @@ using ll = long long;
 const ll INF = 2e18;
 
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
-	
-	int TT;
-	cin >> TT;
-	for (int tt = 1; tt <= TT; tt++) {
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    
+    int TT;
+    cin >> TT;
+    for (int tt = 1; tt <= TT; tt++) {
         cout << "Case #" << tt << ": ";
         
-		int n;
-		cin >> n;
-		
-		vector<ll> a(2 * n - 1);
-		for (int i = 0; i < 2 * n - 1; i++) {
-			cin >> a[i];
-		}
+        int n;
+        cin >> n;
+        
+        vector<ll> a(2 * n - 1);
+        for (int i = 0; i < 2 * n - 1; i++) {
+            cin >> a[i];
+        }
         
         if (n == 1) {
             cout << "1\n";
-			continue;
-		}
-		
+            continue;
+        }
+        
         sort(all(a));
         ll ans = INF;
-		for (ll k : {a[0] + end(a)[-1], a[0] + end(a)[-2], a[1] + end(a)[-1]}) {
+        for (ll k : {a[0] + end(a)[-1], a[0] + end(a)[-2], a[1] + end(a)[-1]}) {
             int l = 0, r = 2 * n - 2;
             int count = 0;
             ll skip = -1;
@@ -54,5 +54,5 @@ int main() {
         }
         if (ans == INF) cout << "-1\n";
         else cout << ans << '\n';
-	}
+    }
 }

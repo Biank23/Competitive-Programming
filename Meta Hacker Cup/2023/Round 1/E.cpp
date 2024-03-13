@@ -61,13 +61,13 @@ struct Query {
 const int INF = 1e9;
 
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
-	
-	int TT;
-	cin >> TT;
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    
+    int TT;
+    cin >> TT;
     Trie trie;
-	for (int tt = 1 ; tt <= TT; tt++) {
+    for (int tt = 1 ; tt <= TT; tt++) {
         int n;
         cin >> n;
         vector<string> w(n);
@@ -125,5 +125,5 @@ int main() {
             }
         }
         cout << "Case #" << tt << ": " << ans << '\n';
-	}
+    }
 }

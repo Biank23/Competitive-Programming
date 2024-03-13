@@ -3,13 +3,13 @@
 using namespace std;
 
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
-	
-	int TT;
-	cin >> TT;
-	for (int tt = 1 ; tt <= TT; tt++) {
-		int n, q;
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    
+    int TT;
+    cin >> TT;
+    for (int tt = 1 ; tt <= TT; tt++) {
+        int n, q;
         string s;
         cin >> n >> s >> q;
         vector<bool> p(n, 0);
@@ -36,5 +36,5 @@ int main() {
             }
         }
         cout << "Case #" << tt << ": " << ans << '\n';
-	}
+    }
 }

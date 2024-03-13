@@ -5,14 +5,14 @@ using namespace std;
 using ll = long long;
 
 int main() {
-	
-	ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
-	
-	int TT;
-	cin >> TT;
-	for (int tt = 1 ; tt <= TT; tt++) {
-		ll A, B, C;
+    
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    
+    int TT;
+    cin >> TT;
+    for (int tt = 1 ; tt <= TT; tt++) {
+        ll A, B, C;
         cin >> A >> B >> C;
         ll ans = 0;
         for (ll S : vector{0LL, 1LL, 2LL, C / A}) {
@@ -23,5 +23,5 @@ int main() {
             }
         }
         cout << "Case #" << tt << ": " << ans << '\n';
-	}
+    }
 }
