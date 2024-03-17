@@ -66,10 +66,10 @@ Mat binpow(Mat a, int k) {
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-	
+    
     int k;
     cin >> k;
-	
+    
     Mat a = build();
     Mat m = binpow(a, k);
     double res = 0.0;
@@ -81,6 +81,6 @@ int main() {
         res += p;
     }
     cout << setprecision(6) << fixed << res << '\n';
-	
+    
     return 0;
 }

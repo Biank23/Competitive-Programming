@@ -55,18 +55,18 @@ ll query(int s, int e, int u, int l = 0, int r = n) {
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-	
+    
     int q;
     cin >> n >> q;
-	
+    
     vector<int> x(n);
     for (int i = 0; i < n; i++) {
         cin >> x[i];
     }
-	
+    
     vector<int> root{0};
     build(root[0]);
-	
+    
     map<int, int> pos;
     for (int r = 0; r < n; r++) {
         if (pos.count(x[r])) {
@@ -82,6 +82,6 @@ int main() {
         cin >> l >> r;
         cout << query(l - 1, r, root[r]) << '\n';
     }
-	
+    
     return 0;
 }

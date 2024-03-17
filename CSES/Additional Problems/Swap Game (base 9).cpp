@@ -27,50 +27,50 @@ const int pow9[10] = {1, 9, 81, 729, 6561, 59049, 531441,
 bool vis[387420489];
  
 const int TARGET = 381367044;
-			
+            
 int swap(int num, int i, int j) {
-	int a = num % pow9[i + 1] / pow9[i];
-	int b = num % pow9[j + 1] / pow9[j];
-	return num + (b - a) * (pow9[i] - pow9[j]);
+    int a = num % pow9[i + 1] / pow9[i];
+    int b = num % pow9[j + 1] / pow9[j];
+    return num + (b - a) * (pow9[i] - pow9[j]);
 }
-            	
+                
 int solve(int s) {
-	queue<int> q;
-	q.push(s);
-	vis[s] = true;
-	
-	int dist = 0;
-	while(!q.empty()) {
-		int sz = ssize(q);
-		while (sz--) {
-			int u = q.front();
-			q.pop();
-			if(u == TARGET) return dist;
-			for (int i = 0; i < CANT_MOVES; i++) {
+    queue<int> q;
+    q.push(s);
+    vis[s] = true;
+    
+    int dist = 0;
+    while(!q.empty()) {
+        int sz = ssize(q);
+        while (sz--) {
+            int u = q.front();
+            q.pop();
+            if(u == TARGET) return dist;
+            for (int i = 0; i < CANT_MOVES; i++) {
                 auto [j, k] = moves[i];
                 int v = swap(u, j, k);
-				if (!vis[v]) {
-					q.push(v);
-					vis[v] = true;
-				}
-			}
-		}
-		dist++;
-	} 
-	return dist;
+                if (!vis[v]) {
+                    q.push(v);
+                    vis[v] = true;
+                }
+            }
+        }
+        dist++;
+    } 
+    return dist;
 }
  
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
-	
-	int s = 0;
-	for (int i = 0; i < n; i++) {
-		int x; cin >> x;
-		s += (x - 1) * pow9[i];
-	}
-	
-	cout << solve(s) << '\n';
-	
-	return 0;
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    
+    int s = 0;
+    for (int i = 0; i < n; i++) {
+        int x; cin >> x;
+        s += (x - 1) * pow9[i];
+    }
+    
+    cout << solve(s) << '\n';
+    
+    return 0;
 }

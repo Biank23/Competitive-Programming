@@ -12,14 +12,14 @@ ll val[MAX_N];
 int n, stSize = 0;
  
 void build(vector<int> &x, int u, int l = 0, int r = n) {
-	if (r - l <= 1) {
-		val[u] = x[l];
-		return;
-	}
-	int m = (l + r) / 2;
-	build(x, L[u] = ++stSize, l, m);
-	build(x, R[u] = ++stSize, m, r);
-	val[u] = val[L[u]] + val[R[u]];
+    if (r - l <= 1) {
+        val[u] = x[l];
+        return;
+    }
+    int m = (l + r) / 2;
+    build(x, L[u] = ++stSize, l, m);
+    build(x, R[u] = ++stSize, m, r);
+    val[u] = val[L[u]] + val[R[u]];
 }
  
 int update(int p, int v, int u, int l = 0, int r = n) {
@@ -53,27 +53,27 @@ ll query(int s, int e, int u, int l = 0, int r = n) {
 }
  
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
-	
-	int q;
-	cin >> n >> q;
-	
-	vector<int> t(n);
-	for (int i = 0; i < n; i++) {
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    
+    int q;
+    cin >> n >> q;
+    
+    vector<int> t(n);
+    for (int i = 0; i < n; i++) {
         cin >> t[i];
     }
-	
-	vector<int> root{0};
-	build(t, root[0]);
-	
-	for (int i = 0; i < q; i++) {
-		int type, k;
-		cin >> type >> k;
+    
+    vector<int> root{0};
+    build(t, root[0]);
+    
+    for (int i = 0; i < q; i++) {
+        int type, k;
+        cin >> type >> k;
         --k;
-		if (type == 3) {
-			root.push_back(root[k]);
-		} else {
+        if (type == 3) {
+            root.push_back(root[k]);
+        } else {
             int a, b;
             cin >> a >> b;
             --a;
@@ -83,7 +83,7 @@ int main() {
                 cout << query(a, b, root[k]) << '\n';
             }
         }
-	}
-	
-	return 0;
+    }
+    
+    return 0;
 }

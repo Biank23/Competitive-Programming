@@ -3,16 +3,16 @@
 using namespace std;
  
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0);
+    ios::sync_with_stdio(0);
+    cin.tie(0);
  
-	int x, n;
-	cin >> x >> n;
+    int x, n;
+    cin >> x >> n;
  
-	set<int> lights{0, x};
-	multiset<int> passages{x};
+    set<int> lights{0, x};
+    multiset<int> passages{x};
  
-	for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         int p;
         cin >> p;
         auto it = lights.upper_bound(p);

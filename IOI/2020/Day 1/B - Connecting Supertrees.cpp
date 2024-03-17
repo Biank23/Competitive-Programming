@@ -32,7 +32,7 @@ struct DSU {
 
 int construct(vector<vi> p) {
     int n = sz(p);
-	vector<vi> b(n, vi(n, 0));
+    vector<vi> b(n, vi(n, 0));
     DSU dsu(n), dsuCmp(n);
     for (int i = 0; i < n; i++) {
         for (int j = i + 1; j < n; j++) {
@@ -44,40 +44,40 @@ int construct(vector<vi> p) {
             }
         }
     }
-	
-	vector<set<int>> groups(n);
-	for (int i = 0; i < n; i++) {
+    
+    vector<set<int>> groups(n);
+    for (int i = 0; i < n; i++) {
         groups[dsuCmp.find(i)].insert(dsu.find(i));
-	}
-	
-	for (int i = 0; i < n; i++) {
-		vi g(all(groups[i]));
-		int m = sz(g);
+    }
+    
+    for (int i = 0; i < n; i++) {
+        vi g(all(groups[i]));
+        int m = sz(g);
         if (m < 2) continue;
-		if (m == 2) return false;
+        if (m == 2) return false;
         auto next = [&](int j) {
             if (++j == m) j = 0;
             return j;
         };
-		for (int j = 0; j < m; j++) {
+        for (int j = 0; j < m; j++) {
             b[g[j]][g[next(j)]] = b[g[next(j)]][g[j]] = 1;
         }
-	}
-	
-	for (int i = 0; i < n; i++) {
-		for (int j = i + 1; j < n; j++) {
-			if (p[i][j] != 1 && dsu.find(i) == dsu.find(j)) {
-				return false;
-			}
-			if (p[i][j] != 2 && p[i][j] != 0 && dsu.find(i) != dsu.find(j)) {
-				return false;
-			}
-			if (p[i][j] == 0 && dsuCmp.find(i) == dsuCmp.find(j)) {
-				return false;
-			}
-		}
-	}
-	
-	build(b);
-	return true;
+    }
+    
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (p[i][j] != 1 && dsu.find(i) == dsu.find(j)) {
+                return false;
+            }
+            if (p[i][j] != 2 && p[i][j] != 0 && dsu.find(i) != dsu.find(j)) {
+                return false;
+            }
+            if (p[i][j] == 0 && dsuCmp.find(i) == dsuCmp.find(j)) {
+                return false;
+            }
+        }
+    }
+    
+    build(b);
+    return true;
 }

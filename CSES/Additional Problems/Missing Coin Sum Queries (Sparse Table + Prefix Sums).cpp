@@ -55,10 +55,10 @@ struct Query {
 };
 
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
-	
-	int q;
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    
+    int q;
     cin >> n >> q;
 
     vector<int> x(n);
@@ -88,6 +88,6 @@ int main() {
     for (int i = 0; i < q; i++) {
         cout << v[i].smallestMissingSum << '\n';
     }
-	
-	return 0;
+    
+    return 0;
 }

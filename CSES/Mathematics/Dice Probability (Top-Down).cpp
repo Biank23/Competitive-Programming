@@ -21,7 +21,7 @@ double dp(int x, int n) {
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-	
+    
     for (int i = 0; i < MAX_X; i++) {
         for (int j = 0; j < MAX_N; j++) {
              memo[i][j] = -1;
@@ -30,13 +30,13 @@ int main() {
     
     int n, a, b;
     cin >> n >> a >> b;
-	
+    
     double ans = 0.0;
     for (int i = a; i <= b; i++) {
         ans += dp(i, n);
     }
-	
+    
     cout << setprecision(6) << fixed << ans << '\n';
-	
+    
     return 0;
 }

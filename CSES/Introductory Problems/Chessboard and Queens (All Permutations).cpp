@@ -21,7 +21,7 @@ int main() {
     int ways = 0;
     do {
         bool flag = true;
-        vector<bool> leftDiag(2*N-1, false), rightDiag(2*N-1, false);
+        vector<bool> leftDiag(2 * N - 1, false), rightDiag(2 * N - 1, false);
         for (int i = 0; i < N; i++) {
             int j = pos[i];
             if (leftDiag[i + j] || rightDiag[N - 1 + j - i] || chessboard[i][j] == '*') {

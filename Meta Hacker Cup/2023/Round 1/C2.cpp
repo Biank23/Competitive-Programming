@@ -5,13 +5,13 @@ using namespace std;
 using ll = long long;
 
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
-	
-	int TT;
-	cin >> TT;
-	for (int tt = 1 ; tt <= TT; tt++) {
-		int n;
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    
+    int TT;
+    cin >> TT;
+    for (int tt = 1 ; tt <= TT; tt++) {
+        int n;
         string s;
         cin >> n >> s;
         vector<bool> p(n, 0);
@@ -38,5 +38,5 @@ int main() {
             ans += op;
         }
         cout << "Case #" << tt << ": " << ans << '\n';
-	}
+    }
 }

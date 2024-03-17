@@ -7,42 +7,42 @@ using namespace std;
 using ll = long long;
 
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
-	
-	int TT;
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    
+    int TT;
     cin >> TT;
     for (int tt = 0; tt < TT; tt++) {
-		ll n, c, d;
-		cin >> n >> c >> d;
-		vector<ll> a(n);
+        ll n, c, d;
+        cin >> n >> c >> d;
+        vector<ll> a(n);
         for (int i = 0; i < n; i++) {
             cin >> a[i];
         }
-		sort(all(a), greater<ll>());
-		a.resize(d + 2, 0);
+        sort(all(a), greater<ll>());
+        a.resize(d + 2, 0);
         vector<ll> p(d + 3, 0);
         for (int i = 0; i < d + 2; i++) {
             p[i + 1] = p[i] + a[i];
         }
-		ll l = -1, r = d + 2;
+        ll l = -1, r = d + 2;
         auto check = [&](ll k) {
             k++;
             return c <= p[k] * (d / k) + p[d % k];
         };
-		while (r - l > 1) {
-			ll m = (l + r) / 2;
-			if (check(m)) {
+        while (r - l > 1) {
+            ll m = (l + r) / 2;
+            if (check(m)) {
                 l = m;
-			} else {
+            } else {
                 r = m;
             }
-		}
-		if (l == -1) cout << "Impossible\n";
-		else if (l == d + 1) cout << "Infinity\n";
-		else cout << l << '\n';
-		
-	}
-	
-	return 0;
+        }
+        if (l == -1) cout << "Impossible\n";
+        else if (l == d + 1) cout << "Infinity\n";
+        else cout << l << '\n';
+        
+    }
+    
+    return 0;
 }

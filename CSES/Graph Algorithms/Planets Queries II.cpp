@@ -7,18 +7,18 @@ const int MAX_N = 2e5, MAX_K = 18;
 int up[MAX_K][MAX_N];
  
 void init(int n) {
-	for (int i = 1; i < MAX_K; i++) {
-		for (int j = 0; j < n; j++) {
-			up[i][j] = up[i - 1][up[i - 1][j]];
-		}
-	}
+    for (int i = 1; i < MAX_K; i++) {
+        for (int j = 0; j < n; j++) {
+            up[i][j] = up[i - 1][up[i - 1][j]];
+        }
+    }
 }
  
 int jump(int x, int k) {
-	for (int i = 0; i < MAX_K; i++) {
-		if (k>>i&1) x = up[i][x];
-	}
-	return x;
+    for (int i = 0; i < MAX_K; i++) {
+        if (k>>i&1) x = up[i][x];
+    }
+    return x;
 }
  
 int d[MAX_N];
@@ -40,22 +40,22 @@ int check(int u, int v) {
 }
  
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
  
-	int n, q;
-	cin >> n >> q;
+    int n, q;
+    cin >> n >> q;
  
-	for (int i = 0; i < n; i++) {
-		cin >> up[0][i];
+    for (int i = 0; i < n; i++) {
+        cin >> up[0][i];
         --up[0][i];
-	}
-	init(n);
+    }
+    init(n);
     for (int i = 0; i < n; i++) {
         if (!vis[i]) dfs(i);
     }
-	while (q--) {
-		int u, v;
+    while (q--) {
+        int u, v;
         cin >> u >> v;
         --u, --v;
         int res = check(u, v);
@@ -64,7 +64,7 @@ int main() {
             if (res != -1) res += d[u];
         }
         cout << res << '\n';
-	}
+    }
  
-	return 0;
+    return 0;
 }

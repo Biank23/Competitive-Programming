@@ -21,13 +21,13 @@ int main() {
             }
         }
     }
-	
+    
     double ans = 0.0;
     for (int i = a; i <= b; i++) {
         ans += dp[n][i];
     }
-	
+    
     cout << setprecision(6) << fixed << ans << '\n';
-	
+    
     return 0;
 }

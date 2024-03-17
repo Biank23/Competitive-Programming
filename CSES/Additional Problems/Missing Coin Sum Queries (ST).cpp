@@ -41,7 +41,7 @@ void init(vector<int> &v) {
     for (int i = 0; i < n; i++) {
         st[i + n] = v[i];
     }
-	for (int i = n - 1; i > 0; i--) {
+    for (int i = n - 1; i > 0; i--) {
         st[i] = op(st[2 * i], st[2 * i + 1]);
     }
 }
@@ -56,10 +56,10 @@ Node query(int l, int r) { //[l, r)
 }
  
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
-	
-	int q;
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    
+    int q;
     cin >> n >> q;
 
     vector<int> x(n);
@@ -78,6 +78,6 @@ int main() {
         }
         cout << smallestMissingSum << '\n';
     }
-	
-	return 0;
+    
+    return 0;
 }

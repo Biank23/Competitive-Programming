@@ -8,22 +8,22 @@ int st[2 * SZ];
  
 void update(int p) {
     p += SZ;
-	while (p) {
-		--st[p];
+    while (p) {
+        --st[p];
         p /= 2;
-	}
+    }
 }
  
 int search(int x) {
     int u = 1;
     while (u < SZ) {
-		u *= 2;
-		if (st[u] < x) {
+        u *= 2;
+        if (st[u] < x) {
             x -= st[u];
             u++;
         }
-	}
-	return u - SZ;
+    }
+    return u - SZ;
 }
  
 int main() {
@@ -35,12 +35,12 @@ int main() {
  
     vector<int> v(n);
     for (int i = 0; i < n; i++) {
-		cin >> v[i];
+        cin >> v[i];
         st[i + SZ] = 1;
-	}
-	for (int i = SZ - 1; i > 0; i--) {
-		st[i] = st[2 * i] + st[2 * i + 1];
-	}
+    }
+    for (int i = SZ - 1; i > 0; i--) {
+        st[i] = st[2 * i] + st[2 * i + 1];
+    }
  
     for (int i = 0; i < n; i++) {
         int x;

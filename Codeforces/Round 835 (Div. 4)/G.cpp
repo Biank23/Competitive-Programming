@@ -36,9 +36,9 @@ void clear() {
  
 int main() {
     ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
-	
-	int TT;
+    cin.tie(0); cout.tie(0);
+    
+    int TT;
     cin >> TT;
     for (int tt = 0; tt < TT; tt++) {
         cin >> n >> a >> b;

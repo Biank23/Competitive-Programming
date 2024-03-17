@@ -28,22 +28,22 @@ int search(int s) {
 }
  
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
-	
-	int n;
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    
+    int n;
     cin >> n;
-	for (int i = 0; i < n; i++) {
-	    cin >> v[i];
-	    update(i, 1);
-	}
-	for (int i = 0; i < n; i++) {
-	    int x;
+    for (int i = 0; i < n; i++) {
+        cin >> v[i];
+        update(i, 1);
+    }
+    for (int i = 0; i < n; i++) {
+        int x;
         cin >> x;
-	    int p = search(x);
-	    update(p, -1);
-	    cout << v[p] << ' ';
-	}
-	
-	return 0;
+        int p = search(x);
+        update(p, -1);
+        cout << v[p] << ' ';
+    }
+    
+    return 0;
 }

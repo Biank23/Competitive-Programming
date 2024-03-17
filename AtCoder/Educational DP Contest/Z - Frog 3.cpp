@@ -42,7 +42,7 @@ int main() {
         while (sz(dq) >= 2 && l.intersectX(dq[0]) <= l.intersectX(dq[1])) {
             dq.pop_front();
         }
-        dq.push_front(Line{-2 * h[i], dp[i] + h[i] * h[i]});
+        dq.push_front(l);
     }
     cout << dp[n - 1] << '\n';
     

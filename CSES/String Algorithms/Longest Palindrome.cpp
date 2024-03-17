@@ -7,13 +7,13 @@ const int MAX_N = 1e6;
 int p[2][MAX_N];
  
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0); cout.tie(0);
-	
-	string s;
-	cin >> s;
-	
-	int n = ssize(s);
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    
+    string s;
+    cin >> s;
+    
+    int n = ssize(s);
     pair<int, int> ans = {-1, 0};
     for (int c : {0, 1}) {
         int l = 0, r = -1;
@@ -33,6 +33,6 @@ int main() {
  
     auto [len, pos] = ans;
     cout << s.substr(pos, len) << '\n';
-	
-	return 0;
+    
+    return 0;
 }

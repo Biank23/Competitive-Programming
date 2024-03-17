@@ -34,7 +34,7 @@ int main(){
     cin.tie(0); cout.tie(0);
     
     cin >> n >> k;
-	for (int i = 1; i < n; i++) {
+    for (int i = 1; i < n; i++) {
         int u, v;
         cin >> u >> v;
         --u, --v;

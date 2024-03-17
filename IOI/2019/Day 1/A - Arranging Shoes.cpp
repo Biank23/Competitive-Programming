@@ -32,29 +32,29 @@ int query(int i) {
 }
 
 ll count_swaps(vector<int> S) {
-	int n = sz(S);
-	
-	vector<pair<int, int>> pairs;
-	map<int, queue<int>> m;
-	
-	for (int i = 0; i < n; i++) {
-		if (!m[S[i]].empty()) {
-			pairs.emplace_back(m[S[i]].front(), i);
-			m[S[i]].pop();
-		} else {
-			m[-S[i]].push(i);
-		}
-	}
-	
-	ll ans = 0;
-	for (auto [x, y] : pairs) {
-		if (S[y] < S[x]) {
-			swap(x, y);
-		}
+    int n = sz(S);
+    
+    vector<pair<int, int>> pairs;
+    map<int, queue<int>> m;
+    
+    for (int i = 0; i < n; i++) {
+        if (!m[S[i]].empty()) {
+            pairs.emplace_back(m[S[i]].front(), i);
+            m[S[i]].pop();
+        } else {
+            m[-S[i]].push(i);
+        }
+    }
+    
+    ll ans = 0;
+    for (auto [x, y] : pairs) {
+        if (S[y] < S[x]) {
+            swap(x, y);
+        }
         for (int p : {x, y}) {
             ans += p - query(p);
             update(p);
         }
-	}
-	return ans;
+    }
+    return ans;
 }

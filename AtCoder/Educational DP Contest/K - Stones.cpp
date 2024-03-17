@@ -22,8 +22,8 @@ int main() {
             }
         }
     }
-	
-	if (dp[k]) {
+    
+    if (dp[k]) {
         cout << "First\n";
     } else {
         cout << "Second\n";

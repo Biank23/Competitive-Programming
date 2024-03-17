@@ -47,18 +47,18 @@ ModInt sum(ModInt l, ModInt r) {
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-	
+    
     ll N;
     cin >> N;
-	
+    
     ModInt res = 0;
     for (ll l = 1, r; l <= N; l = r + 1) {
         ll divisors = N / l;
         r = N / divisors;
         res += divisors * sum(l, r);
     }
-	
+    
     cout << res << '\n';
-	
+    
     return 0;
 }

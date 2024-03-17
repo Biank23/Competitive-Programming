@@ -39,7 +39,7 @@ void pass(int u) {
     lazy[u] = 0;
 }
  
-void update(int s, int e, int v, int l = 0, int r = SZ, int u = 1){
+void update(int s, int e, int v, int l = 0, int r = SZ, int u = 1) {
     pass(u);
     if (e <= l || r <= s) {
         return;
