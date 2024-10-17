@@ -62,7 +62,7 @@ pair<vi, vii> calc(vector<vb> &g) {
 }
 
 int main() {
-    freopen("aventureros.in", "r", stdin);
+    freopen("yurumi.in", "r", stdin);
     freopen("aventureros.out", "w", stdout);
     
     int n, m, c;
